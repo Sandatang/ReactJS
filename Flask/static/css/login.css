@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url("/static/css/bg.png");
+    background-size: cover;
+}
+
+section{
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lg{
+    text-align: center;
+    color: white;
+}
+#lg h2{
+    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 30px;
+    margin: 20px 0;
+}
+#lg p{
+    font-size: 12px;
+    color: rgb(243, 51, 51);
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -90px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    min-width: 500px;
+    background: linear-gradient(to bottom right, rgba(0,0,0,1) 0%, rgba(255,255,255,0.5) 100%);
+}
+form{
+    width: 100%;
+}
+.form-wrap{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+.bt-al{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+label{
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+}
+input{
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    
+}
+input::placeholder{
+    padding-left: 5px;
+}
+
+button{
+    align-self: end;
+    margin: 15px 0;
+    margin-right: 60px;
+    width: 150px;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(10, 194, 35);
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(2, 148, 22);
+    color: #000;
+}
+input:focus{
+    content: "";
+    border-bottom: 2px solid rgb(1, 25, 244);
+}
