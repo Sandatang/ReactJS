@@ -1,18 +1,30 @@
-<nav class="menu" id="menu">
+<nav class="head-out">
 
-    <ul class="menu-nav">
-        <li>
-            <a href="">Display All</a>
-        </li>
-        <li>
-            <a href="">Add</a>
-        </li>
-        <li>
-            <a href="">Find</a>
-        </li>
-        <li>
-            <a href="">Update</a>
-        </li>
-    </ul>
+    
+    <div class="head-wrapper container">
+        <div class="heading">
+            <h1>CRUD Management</h1>
+        </div>
+        <div class="menu-button" id="menu-button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
 
+    <div class="menu container " id="menu">
+        <ul class="menu-nav">
+            <li>
+                <i class="fa fa-camera"></i>
+                <a href="">Camera</a>
+            </li>
+            
+            <li>
+                <form action="{{ url_for('logout') }}" method="psot">
+                    <i class="fa fa-sign-out"></i>
+                    <input type="submit" class="button" value="Logout">
+                </form>
+            </li>
+        </ul>
+    </div>
 </nav>

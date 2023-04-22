@@ -2,27 +2,30 @@
     padding: 0;
     margin: 0;
 }
+.head-out{
+    background: linear-gradient(to right, rgba(10, 194, 35,0.5) 0%, rgb(10, 194, 35) 50%, rgba(10, 194, 35,0.5) 100%);
 
-
+}
 .container{
-    max-width: 95%;
+    max-width: 90%;
     margin: 0 auto;
 }
+
 .head-wrapper{
     display: flex;
     flex-direction: row;
-    background-color: rgb(22, 236, 22);
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
 }
 .heading{
     width: 95%;
     text-align: center;
+    color: #fff;
 }
 
 .menu-button{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,40 +36,167 @@
 .line{
     width: 100%;
     height: 5px;
-    background-color: black;
+    background-color: #ffffff;
     margin: 2px;
 }
 .line-changeColor{
     background-color: red;
 }
 .menu{
-    width: 150px;
+    width: 250px;
     border-radius: 5px;
     margin-right: 5px;
-    background-color: black;
-    float: right;
-    opacity: 0.7;
+    font-size: 15px;
+    background-color: rgba(10, 194, 35, 0.8);
     color: white;
     display: none;
+    position: absolute;
+    right: 0;
 }
-.menu ul a{
-    list-style-type: none;
+.menu ul,li,a{
+    list-style: none;
     text-decoration: none;
 }
-.menu a{
-    color: white;
+.menu li {
+    display: flex;
+    align-items: center;
 }
-.menu ul li{
-    padding: 10px;
+.menu i {
+    margin-left: 10px;
+    font-size: 20px;
+}
+.menu a {
+    width: 100%;
+    margin-left: 10px;
+    color: #fff;
+}
+.menu li{
+    padding: 7px 7px 7px 20px;
+    
+}
+.menu li:hover{
+    cursor: pointer;
+    background-color: rgba(255,255, 255, 0.5);
 }
 
+.menu form{
+    width: 100%;
+}
+.menu .button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    margin-left: 10px;
+    padding-right: 60%;
+    cursor: pointer;
+    font-weight: bold;
+    /* width: 100%; */
+}
+.button:hover , .menu a:hover, li:hover{
+    color: #007BFF;
+}
 
 .menu-button.active .line:nth-child(1){
-    transform: rotate(45deg) translate(9px, 3px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 .menu-button.active .line:nth-child(2){
     opacity: 0;
 }
 .menu-button.active .line:nth-child(3){
-    transform: rotate(-45deg) translate(9px,-6px);
+    transform: rotate(-45deg) translate(2px,-5px);
+} 
+
+/* DISPLAY DATA  */
+#contents{
+    height: 100vh;
+}
+
+.mtl{
+    margin-top: 50px;
+}
+.center-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col{
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+.b-tons{
+    display: flex;
+    gap: 900px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.b-tons button{
+    width: 80px;
+    color:#007BFF;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+.b-tons button:hover{
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+table{
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+th,td,tr{
+    padding: 7px 0;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+th,tr{
+    border: 1px solid #d9d9d9;
+}
+tbody tr:hover{
+    background-color: #dcdcdc;
+}
+
+
+/* ADD STUDENT MODAL */
+.add-modal-bg{
+    display: none;
+    position: fixed;
+    z-index: 99;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.add-modal-container{
+    background-color: #fff;
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.add-title{
+    width: 100%;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+.add-modal-content{
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.add-modal-content{
+    align-items: center;
+    margin: 20px 0;
+}
+.cu label{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }

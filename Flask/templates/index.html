@@ -2,19 +2,71 @@
 
 {% block body %}
 
-<div class="container">
-    <div class="head-wrapper">
-        <div class="heading">
-            <h1>CRUD Management</h1>
-        </div>
-        <div class="menu-button" id="menu-button">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+    {% include 'nav.html' %}
+
+<main id="contents">
+    {% if '_flashes' in session %}
+    <div class="lg container center-div" id="messages">
+        {% with message = get_flashed_messages() %}
+            {% if message %}
+                {% for mssg in message %}
+                    <p>{{ mssg }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    {% endif %}
+
+    <div class="container mtl center-div">
+        <div class="col center-div">
+            <div class="b-tons">
+                <!-- sharp fa-solid fa-magnifying-glass -->
+                <button class="search" id="search" aria-label="Search"><i class="fa fa-search"></i></button>
+                <button class="add" id="add" aria-label="Add"><i class="fa fa-plus"></i></button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Idno</th>
+                        <th>Lastname</th>
+                        <th>Firstname</th>
+                        <th>Course</th>
+                        <th>Level</th>
+                        <th rowspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in session['students_data'] %}
+                        <tr>
+                            <td>{{data[1]}}</td>
+                            <td>{{data[2]}}</td>
+                            <td>{{data[3]}}</td>
+                            <td>{{data[4]}}</td>
+                            <td>{{data[5]}}</td>
+                            <td>
+                                <span id="action-form-controller">
+                                    <form class="action-form" action="{{ url_for('deleteData', file=data[0], extension=data[1]) }}" id="actions-form" method="POST">
+                                        <input type="hidden" value="{{ data[0] }}" name="id">
+                                        <button data-action="delete" aria-label="Delete"><i class="fa fa-trash action-del"></i></button>
+                                    </form>
+
+                                    <form class="action-form" action="" id="actions-form" method="POST">
+                                        <input type="hidden" value="{{ data[0] }}" name="id">
+                                        <button data-action="edit" aria-label="Edit"><i class="fa fa-edit action-s"></i></button>
+                                    </form>
+                                </span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+             </table>
         </div>
     </div>
-
-
-    {% include 'nav.html' %}
+</main>
+<div id="modal" class="add-modal-bg">
+    {% include 'add.html' %} <!-- MODAL -->
+</div>
+<div id="modal" class="add-modal-bg">
+    {% include 'add.html' %}
 </div>
 {% endblock %}
