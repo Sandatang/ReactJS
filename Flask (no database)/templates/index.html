@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %} CRUD {% endblock %}
+{% block header %} {% include 'header.html' %}  {% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <div class="container">
+            {% with mssg = get_flashed_messages() %}
+                {% if mssg %}
+                    {% for msg in mssg %}
+                        <p class="txt-center top-margin txt-lg" id="mssg">{{ msg }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>  
+
+        <div class="container column indent-lg relative">
+            <div class="top-margin txt-right con-width-inherit">
+                <div class="con-width-inherit m-auto"><button class="button" id="add">ADD</button></div>
+            </div>
+            <div class="con-width-inherit">
+                <table class="table con-width-inherit txt-center m-auto">
+                    <thead>
+                        <tr>
+                            {% for head in headers %}
+                                <td>{{ head | upper}}</td>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for student in data %}
+                            <tr>
+                                <td>{{ student['idno'] }}</td>
+                                <td>{{ student['lastname'] }}</td>
+                                <td>{{ student['firstname'] }}</td>
+                                <td>{{ student['course'] }}</td>
+                                <td>{{ student['level'] }}</td>
+                                <td>
+                                    <span class="row center indent-lg">
+                                        <form action="{{ url_for('deleteData') }}" method="post" id="deleteActionForm">
+                                            <input type="hidden" name="idno" value="{{student['idno']}}">
+                                            <button class="transparent" onclick="delConfirmation(event, {{student['idno']}} )"><i class=" fa fa-trash action-del txt-lg"></i></button>
+                                        </form>
+                                        
+
+                                        <form action="{{url_for('editData')}}" method="post" id="editActionForm">
+                                            <input type="hidden" name="idno" value="{{student['idno']}}">
+                                            <button class="transparent"> <i class=" fa fa-edit action-s txt-lg"></i></button>
+                                        </form>
+                                    </span>
+                                </td>
+                                
+                                
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- MODAL -->
+        {% include 'addModal.html' %}
+
+    </main>
+
+{% endblock %}

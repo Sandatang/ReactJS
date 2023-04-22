@@ -1,0 +1,210 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to right , rgba(204, 255, 255, 0.4) 0%, rgba(51,255,255,0.9) 50%, rgba(204,255,255,0.4) 100%);
+    padding: 10px;
+}
+
+.con-width-inherit{
+    width: inherit;
+    /* border: 1px solid black; */
+}
+.width-hf{
+    width: 50%;
+}
+.width-f{
+    width: 100%;
+}
+
+
+.container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.indent-lg{
+    gap: 20px;
+}
+
+/* text */
+.txt-right{
+    text-align: right;
+}
+.txt-center{
+    text-align: center;
+}
+.txt-lg{
+    font-size: 18px;
+}
+
+
+/* margins */
+.top-margin{
+    margin-top: 5%;
+}
+.m-auto{
+    margin: auto;
+}
+.m-left{
+    margin-left: 10px;
+}
+
+.button{
+    border: none;
+    padding: 10px 0;
+    width: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit:hover{
+    color: white;
+    background-color: rgb(72, 70, 202);
+}
+#add:hover{
+    color: white;
+    background-color: rgb(72, 70, 202);
+}
+
+.transparent{
+    border: none;
+    background-color: transparent !important;
+}
+.bg{
+    background-color: rgb(204, 255, 255);
+}
+.bg-2{
+    background-color: rgb(171, 214, 214);
+}
+
+/* border */
+.radius{
+    border-radius: 5px;
+}
+.b-none{
+    border: none;
+}
+
+/* padding */
+.p{
+    padding: 20px;
+}
+.p-lg-y{
+    
+    padding: 50px 0;
+}
+.p-lg-top{
+    padding: 15px 0;
+}
+.p-left{
+    padding-left: 10px;
+}
+
+/* tables */
+.table{
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+.table thead{
+    background-color: #dcdcdc;
+}
+.table th,td{
+    padding: 8px;
+}
+.table tr {
+    border: 1px solid #d9d9d9;
+}
+.table tr:hover{
+    background-color: #f5f5f5;
+}
+
+/* absolute and relative */
+.relative{
+    position: relative;
+}
+.absolute-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.absolute-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.left-center{
+    /* left: 50%; */
+    transform: translateX(50%);
+}
+
+
+/* ACTION CONTROL */
+
+.action-del{
+    color: rgb(235, 59, 83);
+}
+.action-s{
+    color: rgb(95, 255, 47);
+}
+.action-del:hover, .action-s:hover{
+    cursor: pointer;
+    color: #000;
+}
+
+
+/* MODAL */
+#closeModal:hover{
+    cursor: pointer;
+    background-color: rgb(235, 59, 83);
+}
+.o-modal{
+    display: none;
+    position: fixed;
+    z-index: 99;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+.o-modal-container{
+    max-width: 600px;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    /* padding: 20px; */
+    border-radius: 5px;
+}
+.relative input,select{
+    width: 80%;
+    padding: 7px 0;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+.submit{
+    display: block;
+    align-self: self-end !important;
+    font-size: 1rem;
+}
+
+#editDiv input, #editDiv select{
+    border-radius: 5px !important;
+}
+

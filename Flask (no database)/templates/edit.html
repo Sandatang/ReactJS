@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <script src="https://kit.fontawesome.com/a8fefd651a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="o-modal-container">
+        
+        <div class="p-lg-top relative">
+            <div class=" bg-2 radius p-lg-y">
+                <a href="{{url_for('home')}}">
+                    <span class="absolute-left action-del">
+                        <i class="fa fa-house"></i>
+                        <i class="fa fa-arrow-left"></i>
+                    </span>
+                </a>
+                <div class="container p">
+                    <form class="column con-width-inherit indent-lg" action="{{ url_for('editInsertData')}}"  id="editDiv" method="post">
+                        {% for data in data %}
+                            <div class="row indent-lg width-f relative">
+                                <label for="idno">Idno</label>
+                                <input class="absolute-right" type="text" name="idno" value="{{ data['idno'] }} " readonly>
+                            </div>
+
+                            <div class="row indent-lg width-f relative">
+                                <label for="lastname">Lastname</label>
+                                <input class="absolute-right" type="text" name="lastname"  value="{{ data['lastname'] }}">
+                            </div>
+                            
+                            <div class="row indent-lg width-f relative">
+                                <label for="firstname">Firstname</label>
+                                <input class="absolute-right" type="text" name="firstname"  value="{{ data['firstname'] }}">
+                            </div>
+
+                            <div class="row indent-lg width-f relative">
+                                <label for="course">Course</label>
+                                <!-- <input class="absolute-right" type="text" name="idno"> -->
+                                <select class="absolute-right" name="course" id="">
+                                    
+                                    <option disabled selected value="">-- Select Courses --</option>
+                                    <option value="bsit" {% if data['course'].lower() == 'bsit' %} selected {% endif %} >BS Information Technology</option>
+                                    <option value="bshm" {% if data['course'].lower() == 'bshm' %} selected {% endif %} >BS Hospitality Management</option>
+                                    <option value="bscs" {% if data['course'].lower() == 'bscs' %} selected {% endif %} >BS Computer Science</option>
+                                    <option value="bsce" {% if data['course'].lower() == 'bsce' %} selected {% endif %} >BS Civil Engineering</option>
+                                </select>
+                            </div>
+                            
+                            <div class="row indent-lg width-f relative">
+                                <label for="level">Level</label>
+                                <!-- <input class="absolute-right" type="text" name="idno"> -->
+                                <select class="absolute-right" name="level" id="">
+                                    <option disabled selected value="">-- Select Year --</option>
+                                    <option value="1" {% if data['level'] == '1' %} selected {% endif %} >1st Year</option>
+                                    <option value="2" {% if data['level'] == '2' %} selected {% endif %} >2nd Year</option>
+                                    <option value="3" {% if data['level'] == '3' %} selected {% endif %} >3rd Year</option>
+                                    <option value="4" {% if data['level'] == '4' %} selected {% endif %} >4th Year</option>
+                                </select>
+                            </div>
+                        {% endfor %}
+
+                        <button class="button submit" id="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

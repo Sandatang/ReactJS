@@ -1,0 +1,56 @@
+<div class="o-modal" id="addModal">
+    <div class="o-modal-container">
+        <!-- <div> -->
+            <div class="bg txt-center relative radius p" >
+                <h2>Add Student</h2>
+                <button class="transparent absolute-right txt-lg" id="closeModal">X</button> 
+            </div>
+            <div class="container p">
+                <form class="column con-width-inherit indent-lg" action="{{ url_for('insertData')}}" method="post">
+
+                    <div class="row indent-lg width-f relative">
+                        <label for="idno">Idno</label>
+                        <input class="absolute-right  p-left" type="text" name="idno">
+                    </div>
+
+                    <div class="row indent-lg width-f relative">
+                        <label for="lastname">Lastname</label>
+                        <input class="absolute-right  p-left" type="text" name="lastname">
+                    </div>
+                    
+                    <div class="row indent-lg width-f relative">
+                        <label for="firstname">Firstname</label>
+                        <input class="absolute-right  p-left" type="text" name="firstname">
+                    </div>
+
+                    <div class="row indent-lg width-f relative">
+                        <label for="course">Course</label>
+                        <!-- <input class="absolute-right" type="text" name="idno"> -->
+                        <select class="absolute-right  p-left" name="course" id="">
+                            
+                            <option disabled selected value="">-- Select Courses --</option>
+                            <option value="bsit">BS Information Technology</option>
+                            <option value="bshm">BS Hospitality Management</option>
+                            <option value="bscs">BS Computer Science</option>
+                            <option value="bsce">BS Civil Engineering</option>
+                        </select>
+                    </div>
+                    
+                    <div class="row indent-lg width-f relative">
+                        <label for="level">Level</label>
+                        <!-- <input class="absolute-right" type="text" name="idno"> -->
+                        <select class="absolute-right  p-left" name="level" id="">
+                            <option disabled selected value="">-- Select Year --</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+
+                    <button class="button submit" id="submit">Submit</button>
+                </form>
+            </div>
+        <!-- </div> -->
+    </div>
+</div>
