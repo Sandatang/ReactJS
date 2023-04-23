@@ -26,7 +26,14 @@ close.onclick = () =>{
 
 function delConfirmation(event, idno){
     event.preventDefault()
-    if(confirm("Do you want to delete this student?"+idno)){
+    if(confirm("Do you want to delete this student "+idno+"?")){
         deleteActionForm.submit()
+    }
+}
+
+function editConfirmation(event){
+    event.preventDefault()
+    if(confirm("Do you really want to continue? ")){
+        editActionForm.submit()
     }
 }

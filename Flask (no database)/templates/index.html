@@ -42,7 +42,7 @@
                                     <span class="row center indent-lg">
                                         <form action="{{ url_for('deleteData') }}" method="post" id="deleteActionForm">
                                             <input type="hidden" name="idno" value="{{student['idno']}}">
-                                            <button class="transparent" onclick="delConfirmation(event, {{student['idno']}} )"><i class=" fa fa-trash action-del txt-lg"></i></button>
+                                            <button class="transparent" onclick="delConfirmation(event, student['idno'] )"><i class=" fa fa-trash action-del txt-lg"></i></button>
                                         </form>
                                         
 

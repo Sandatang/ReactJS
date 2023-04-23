@@ -11,17 +11,21 @@
 <body>
     {% include 'header.html' %}
     
-    <div class="o-modal-container">
+    <div class="o-modal-container o-container shadow radius ">
         
+        <div class="bg-2 width-f txt-center white p-sm-y radius" >
+            <h2>Add Student</h2>
+        </div>
         <div class="p-lg-top relative">
-            <div class=" bg-2 radius p-lg-y">
+            <div class=" radius ">
                 <a href="{{url_for('home')}}">
-                    <span class="absolute-left action-del">
+                    <span class="absolute-left action-del txt-lg">
                         <i class="fa fa-house"></i>
                         <i class="fa fa-arrow-left"></i>
                     </span>
                 </a>
-                <div class="container p">
+                <div class="container p column">
+                    
                     <form class="column con-width-inherit indent-lg" action="{{ url_for('editInsertData')}}"  id="editDiv" method="post">
                         {% for data in data %}
                             <div class="row indent-lg width-f relative">
@@ -65,7 +69,7 @@
                             </div>
                         {% endfor %}
 
-                        <button class="button submit" id="submit">Submit</button>
+                        <button class="button submit" onclick="editConfirmation(event)" id="submit">Submit</button>
                     </form>
                 </div>
             </div>
