@@ -38,20 +38,20 @@
                 <tbody>
                     {% for data in session['students_data'] %}
                         <tr>
-                            <td>{{data[1]}}</td>
-                            <td>{{data[2]}}</td>
-                            <td>{{data[3]}}</td>
-                            <td>{{data[4]}}</td>
+                            <td>{{data[1] }}</td>
+                            <td>{{data[2].title() }}</td>
+                            <td>{{data[3].title() }}</td>
+                            <td>{{data[4].upper() }}</td>
                             <td>{{data[5]}}</td>
                             <td>
                                 <span id="action-form-controller">
-                                    <form class="action-form" action="{{ url_for('deleteData', file=data[0], extension=data[1]) }}" id="actions-form" method="POST">
-                                        <input type="hidden" value="{{ data[0] }}" name="id">
+                                    <form class="action-form" action="{{ url_for('deleteData')}}" id="actions-form" method="POST">
+                                        <input type="hidden" value="{{ data[1] }}" name="id">
                                         <button data-action="delete" aria-label="Delete"><i class="fa fa-trash action-del"></i></button>
                                     </form>
 
-                                    <form class="action-form" action="" id="actions-form" method="POST">
-                                        <input type="hidden" value="{{ data[0] }}" name="id">
+                                    <form class="action-form" action="{{ url_for('editData') }}" id="actions-form" method="POST">
+                                        <input type="hidden" value="{{ data[1] }}" name="id">
                                         <button data-action="edit" aria-label="Edit"><i class="fa fa-edit action-s"></i></button>
                                     </form>
                                 </span>

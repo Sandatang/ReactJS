@@ -33,7 +33,7 @@ def validation():
     username  = request.form['username']
     password  = request.form['password']
 
-    if username == 'a' and password == 'a':
+    if username == 'user' and password == 'admin':
         
         query = Query('student')
         data = query.getData()
@@ -66,14 +66,14 @@ def insertData():
         flash("Data not inserted something occured")
     return redirect(url_for('home'))
 
-@app.route("/deleting/<file>.<extension>", methods=['POST'])
-def deleteData(file,extension):
+@app.route("/deleting", methods=['POST'])
+def deleteData():
     session.pop('_flashes', None)
 
-    id = request.form['id']
+    idno = request.form['id']
     
     if id:
-        query = Query('student', id=id)
+        query = Query('student', idno=idno)
         data = query.deleteQuery()
 
         if data:
@@ -81,7 +81,46 @@ def deleteData(file,extension):
             session['students_data'] = query.getData()
     else:
         flash("Something was wrong please try again.")
-    return redirect(url_for('home',file,a))
+    return redirect(url_for('home'))
 
+
+@app.route("/editing", methods=['POST'])
+def editData():
+    session.pop('_flashes', None)
+
+    idno = request.form['id']
+
+    if idno:
+        query = Query('student', idno=idno)
+        data = query.getSingleData()
+
+        if data:
+            session['data'] = data
+            return render_template('edit.html')
+    else:
+        flash('Something was wrong please try again.')
+    return redirect(url_for('home'))
+
+
+@app.route('/updated', methods=['POST'])
+def updateData():
+    session.pop('_flashes', None)
+
+    
+    query = Query('student', 
+        idno = request.form['idno'],
+        lastname = request.form['lastname'],
+        firstname = request.form['firstname'],
+        course = request.form['course'],
+        level = request.form['level'],
+    )
+
+    row = query.updateQuery()
+
+    if row:
+        flash('Updated succesfully')
+        session['students_data'] = query.getData()
+    else: flash('Not updated ')
+    return redirect(url_for('home'))
 if __name__ == "__main__":
     app.run(debug=True)

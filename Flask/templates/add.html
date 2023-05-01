@@ -1,40 +1,53 @@
 <!-- <div id="modal" class="add-modal-bg"> -->
-    <div class="add-modal-container">
-        <div class="add-title">
+    <div class="add-modal-container relative">
+        <div class="add-title ">
             <h2>Add Entity Form</h2>
+            <button class="transparent absolute-right txt-lg  action-del" id="closeModal">X</button> 
         </div>
         <div class="add-modal-content">
-            <form action="{{ url_for('insertData') }}" method="POST">
-                <div class="cu">
-                    <label for="idno">IDNO</label>
-                    <input type="text" name="idno" required>
+            <form class="column con-width-inherit indent-lg" action="{{ url_for('insertData')}}" method="post">
+
+                <div class="row indent-lg width-f relative">
+                    <label for="idno">Idno</label>
+                    <input class="absolute-right  p-left" type="text" name="idno">
                 </div>
 
+                <div class="row indent-lg width-f relative">
+                    <label for="lastname">Lastname</label>
+                    <input class="absolute-right  p-left" type="text" name="lastname">
+                </div>
                 
-                <div class="cu">
-                    <label for="idno">Lastname</label>
-                    <input type="text" name="lastname" required>
+                <div class="row indent-lg width-f relative">
+                    <label for="firstname">Firstname</label>
+                    <input class="absolute-right  p-left" type="text" name="firstname">
                 </div>
 
+                <div class="row indent-lg width-f relative">
+                    <label for="course">Course</label>
+                    <!-- <input class="absolute-right" type="text" name="idno"> -->
+                    <select class="absolute-right  p-left" name="course" id="">
+                        
+                        <option disabled selected value="">-- Select Courses --</option>
+                        <option value="bsit">BS Information Technology</option>
+                        <option value="bshm">BS Hospitality Management</option>
+                        <option value="bscs">BS Computer Science</option>
+                        <option value="bsce">BS Civil Engineering</option>
+                    </select>
+                </div>
                 
-                <div class="cu">
-                    <label for="idno">Firstname</label>
-                    <input type="text" name="firstname" required>
+                <div class="row indent-lg width-f relative">
+                    <label for="level">Level</label>
+                    <!-- <input class="absolute-right" type="text" name="idno"> -->
+                    <select class="absolute-right  p-left" name="level" id="">
+                        <option disabled selected value="">-- Select Year --</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
                 </div>
 
-                
-                <div class="cu">
-                    <label for="idno">Course</label>
-                    <input type="text" name="course" required>
-                </div>
-
-                
-                <div class="cu">
-                    <label for="idno">Level</label>
-                    <input type="text" name="level" required>
-                </div>
-
-                <button>Submit</button>
+                <button class="button submit" id="submit">Submit</button>
             </form>
         </div>
     </div>

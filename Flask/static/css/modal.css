@@ -1,0 +1,200 @@
+.con-width-inherit{
+    width: inherit;
+    /* border: 1px solid black; */
+}
+.width-hf{
+    width: 50%;
+}
+.width-f{
+    width: 100%;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.indent-lg{
+    gap: 20px;
+}
+
+/* text */
+.txt-right{
+    text-align: right;
+}
+.txt-center{
+    text-align: center;
+}
+.txt-lg{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* margins */
+/* .top-margin{
+    margin-top: 5%;
+}
+.m-y{
+    margin: 5% 0;
+}
+.m-auto{
+    margin: auto;
+}
+.m-left{
+    margin-left: 10px;
+} */
+
+.button{
+    border: none;
+    padding: 10px 0;
+    width: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(72, 70, 202);
+    box-shadow: 0 4px 2px 0 rgba(0,0,0,0.2);
+}
+#submit:hover , #add:hover{
+    background-color: rgb(99, 98, 201);
+}
+
+.transparent{
+    border: none;
+    background-color: transparent !important;
+}
+/* .bg{
+    background-color: rgb(72, 70, 202);
+} */
+.bg-2{
+    background-color: rgb(107, 106, 207);
+}
+/* .white{
+    color: white;
+} */
+
+/* border */
+.radius{
+    border-radius: 5px;
+}
+.b-none{
+    border: none;
+}
+
+/* padding */
+.p{
+    padding: 20px;
+}
+.p-lg-y{
+    
+    padding: 50px 0;
+}
+.p-sm-y{
+    padding: 25px 0;
+}
+.p-lg-top{
+    padding: 15px 0;
+}
+.p-left{
+    padding-left: 10px;
+}
+
+/* tables */
+/* .table{
+    overflow-x: auto;
+    border-collapse: collapse;
+} */
+/* .table thead{
+    background-color: #dcdcdc;
+}
+.table th,td{
+    padding: 8px;
+}
+.table tr {
+    border: 1px solid #d9d9d9;
+}
+.table tr:hover{
+    background-color: #f5f5f5;
+} */
+
+/* absolute and relative */
+.relative{
+    position: relative;
+}
+.absolute-right{
+    position: absolute;
+    top: -10px;
+    right: 0;
+}
+.absolute-left{
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+.left-center{
+    /* left: 50%; */
+    transform: translateX(50%);
+}
+
+
+/* ACTION CONTROL */
+
+.action-del{
+    color: rgb(235, 59, 83);
+}
+.action-s{
+    color: rgb(95, 255, 47);
+}
+.action-del:hover, .action-s:hover{
+    cursor: pointer;
+    color: #000;
+}
+
+
+/* MODAL */
+#closeModal:hover{
+    cursor: pointer;
+    background-color: rgb(235, 59, 83);
+}
+.o-modal{
+    display: none;
+    position: fixed;
+    z-index: 99;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+.o-modal-container{
+    max-width: 600px;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    /* padding: 20px; */
+    border-radius: 5px;
+}
+
+.o-container{
+    max-width: 800px !important;
+}
+.shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.relative input,select{
+    width: 80%;
+    padding: 7px 0;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+.submit{
+    display: block;
+    align-self: self-end !important;
+    font-size: 1rem;
+}
+
+#editDiv input, #editDiv select{
+    border-radius: 5px !important;
+}
+
