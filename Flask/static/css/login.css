@@ -2,10 +2,10 @@
     padding: 0;
     margin: 0;
 }
-body {
+/* body {
     background-image: url("/static/css/bg.png");
     background-size: cover;
-}
+} */
 
 section{
     font-family: cursive;
@@ -16,7 +16,6 @@ section{
 
 #lg{
     text-align: center;
-    color: white;
 }
 #lg h2{
     letter-spacing: 1px;
@@ -38,9 +37,12 @@ section{
     margin-top: -90px;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     border-radius: 5px;
     min-width: 500px;
-    background: linear-gradient(to bottom right, rgba(0,0,0,1) 0%, rgba(255,255,255,0.5) 100%);
+    height: 500px;
+    background-color: rgb(210, 215, 211);
+    box-shadow: 0 0 10px;
 }
 form{
     width: 100%;
@@ -60,7 +62,6 @@ form{
 label{
     font-size: 15px;
     font-weight: 700;
-    color: white;
 }
 input{
     outline: none;

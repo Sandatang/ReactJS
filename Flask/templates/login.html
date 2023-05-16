@@ -10,29 +10,28 @@
 <body>
     <section>
         <div class="wrapper">
-
-            <div id="lg"><h2>Login</h2></div>
-            <div id="lg">
-                {% with error = get_flashed_messages() %}
-                    {% if error %}
-                        {% for er in error %}
-                            <p>{{ er }}</p>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
-            <form action="{{ url_for('validation') }}" method="post">
-                <div class="form-wrap">
-                    <div class="bt-al">
-                    
-                        <label for="">Username</label><input type="text" placeholder="Username" name="username" required>
-                    </div>
-                    <div class="bt-al">
-                        <label for="">Password&nbsp;</label><input type="password" placeholder="Password" name="password" required>
-                    </div>
-                    <button type="submit">Sign in</button>
+                <div id="lg"><h2>Login</h2></div>
+                <div id="lg">
+                    {% with error = get_flashed_messages() %}
+                        {% if error %}
+                            {% for er in error %}
+                                <p>{{ er }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                 </div>
-            </form>
+                <form action="{{ url_for('validation') }}" method="post">
+                    <div class="form-wrap">
+                        <div class="bt-al">
+                        
+                            <label for="">Username</label><input type="text" placeholder="Username" name="username" required>
+                        </div>
+                        <div class="bt-al">
+                            <label for="">Password&nbsp;</label><input type="password" placeholder="Password" name="password" required>
+                        </div>
+                        <button type="submit">Sign in</button>
+                    </div>
+                </form>
         </div>
     </section>
 </body>

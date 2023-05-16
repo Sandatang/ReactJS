@@ -10,6 +10,9 @@
     max-width: 90%;
     margin: 0 auto;
 }
+.container-inherit{
+    width: inherit;
+}
 
 .head-wrapper{
     display: flex;
@@ -126,8 +129,8 @@
 }
 .b-tons{
     display: flex;
-    gap: 900px;
     margin-bottom: 10px;
+    gap: 100px;
     padding: 5px;
 }
 .b-tons button{
@@ -200,3 +203,11 @@ tbody tr:hover{
     gap: 10px;
     align-items: center;
 }
+
+/* Media SCreen */
+@media screen and (max-width: 768px){
+    .action-buttons-resp{
+        display: none;
+    }
+}
+

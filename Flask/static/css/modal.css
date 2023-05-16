@@ -140,6 +140,16 @@
     transform: translateX(50%);
 }
 
+.add-modal-container{
+    background-color: #fff;
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* ACTION CONTROL */
 

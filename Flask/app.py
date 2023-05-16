@@ -122,5 +122,6 @@ def updateData():
         session['students_data'] = query.getData()
     else: flash('Not updated ')
     return redirect(url_for('home'))
+    
 if __name__ == "__main__":
     app.run(debug=True)
